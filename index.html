@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractals Interactive Visualizer</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/049/692/812/non_2x/classy-red-rose-stencil-clipart-vinyl-cutting-free-png.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <h1 class="text-5xl font-bold text-center mb-8 gradient-text">Fractals Interactive Visualizer</h1>
+        
+        <!-- Controls -->
+        <div class="mb-8 flex flex-wrap gap-4 justify-center">
+            <select id="fractalType" class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+                <option value="mandelbrot">Mandelbrot Set</option>
+                <option value="julia">Julia Set</option>
+                <option value="sierpinski-carpet">Sierpiński Carpet</option>
+                <option value="sierpinski-triangle">Sierpiński Triangle</option>
+                <option value="pythagoras-tree">Pythagoras Tree</option>
+            </select>
+            <div id="fractalControls" class="flex gap-4">
+                <input type="range" id="iterations" min="1" max="100" value="50" 
+                    class="bg-gray-800 rounded-lg">
+                <input type="color" id="colorPicker" value="#3B82F6" 
+                    class="bg-transparent h-10 w-10 rounded cursor-pointer">
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-wrap gap-8">
+            <!-- Canvas -->
+            <div class="flex-1 min-w-[300px]">
+                <canvas id="fractalCanvas" class="fractal-canvas w-full bg-black rounded-lg"
+                    width="800" height="600"></canvas>
+                <div class="mt-4 text-center text-sm text-gray-400">
+                    Scroll to zoom, drag to pan
+                </div>
+            </div>
+
+            <!-- Info Panel -->
+            <div class="info-panel w-full md:w-96 p-6 rounded-lg">
+                <h2 id="fractalTitle" class="text-2xl font-bold mb-4">Mandelbrot Set</h2>
+                <p id="fractalDescription" class="text-gray-300 mb-4"></p>
+                <div id="fractalProperties" class="text-sm text-gray-400"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-gray-400 text-sm py-4">
+        &copy; 2025 Skillset Science. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

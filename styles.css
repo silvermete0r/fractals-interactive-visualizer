@@ -1,0 +1,32 @@
+
+.fractal-canvas {
+    cursor: crosshair;
+}
+.gradient-text {
+    background: linear-gradient(45deg, #3B82F6, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.info-panel {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.help-tooltip {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.control-item:hover .help-tooltip {
+    display: block;
+}
+.loading {
+    animation: pulse 1.5s infinite;
+}
